@@ -1,6 +1,6 @@
 <template>
-    <div>
-        english
+    <div class="notfound">
+        404 not found!
     </div>
 </template>
 

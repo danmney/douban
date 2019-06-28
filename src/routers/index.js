@@ -1,18 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import home from '@/routers/home'
+import audio from '@/routers/audio'
+import radio from '@/routers/radio'
+import group from '@/routers/group'
+import mine from '@/routers/mine'
 Vue.use(Router)
 let router =  new Router({
   routes: [
-      {path:"/", redirect:"/home"},
-      { path:'/home',component:()=>import('@/views/Home'),name:"home"},
-      {path:'/detail',component:()=>import('@/views/Detail'),children:[
-        {path:"",redirect:"china"},
-        {path:"china",component:()=>import('@/views/China')},
-        {path:"english",component:()=>import('@/views/English')}
-      ]},
-      {name:"group", path:'/group',component:()=>import('@/views/Group')},
-      {name:"list", path:'/list',component:()=>import('@/views/List')},
-      {name:"mine", path:'/mine',component:()=>import('@/views/Mine')}
+      {path:"/",redirect:"/home"},
+      home,audio,radio,group,mine,
+      {name:"notfound",path:"/notfound",component:()=>import("@/views/notFound/notFound")},
+      {path:"*",redirect:"notfound"}
   ]
 })
 //全局前置守卫

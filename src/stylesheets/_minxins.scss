@@ -1,0 +1,12 @@
+//清除浮动
+.clearfx::after{
+    content: "";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+}
+button{
+    @include border-radius
+}
